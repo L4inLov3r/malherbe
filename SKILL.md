@@ -1,6 +1,6 @@
 ---
 name: malherbe
-version: 1.2.0
+version: 1.2.1
 license: MIT
 description: Détecte et corrige les marques d'écriture IA dans un texte FRANÇAIS (tics lexicaux, calques de l'anglais, remplissage, typographie, mise en forme LLM), en respectant le registre — académique, professionnel, LinkedIn ou casual. À utiliser quand l'utilisateur demande d'humaniser, de dé-IA-iser, d'« enlever le style ChatGPT » d'un texte français, de le relire pour en retirer les tournures IA, ou dit qu'un texte « sonne IA ». Ne réécrit jamais un texte déjà humain. NE PAS déclencher pour - traduire, résumer, corriger uniquement l'orthographe, vérifier des faits, réécrire du code, imiter une voix de marque.
 allowed-tools: Read, Write, Edit, Grep, Glob
@@ -44,7 +44,7 @@ Mode prévention : si on te demande de RÉDIGER (pas de corriger), applique ce c
 - **Texte collé dans la conversation** → traiter directement, livrer le résultat.
 - **Fichier sur disque** → 1ᵉʳ tour : liste numérotée COMPLÈTE des corrections proposées (ligne, extrait original, pattern, réécriture proposée), puis STOP et demander : « J'applique lesquelles ? ». 2ᵉ tour : appliquer uniquement les corrections validées, avec Edit. Jamais d'écriture de fichier sans validation.
 - **Texte collé ET chemin fournis** → le workflow FICHIER prime (liste + STOP) ; le texte collé ne sert que de contexte. Aucune écriture disque sans validation, même si le texte a déjà été traité en conversation.
-- **PDF ou format non éditable** → lecture seule : lire le document (Read gère les PDF), traiter, et livrer la version corrigée en conversation ou dans un fichier .md À CÔTÉ (jamais de tentative d'édition du PDF — c'est un produit d'export, pas une source). Si une source éditable existe (.md, .docx, .tex), proposer de corriger la source.
+- **PDF ou format non éditable** → jamais d'édition en place (le texte d'un PDF est positionné au pixel, toute réécriture casse la mise en page). Trois sorties possibles, à proposer dans cet ordre : (1) corriger la SOURCE si elle existe (.md, .docx via un skill docx, .tex) — seul chemin qui préserve la mise en page ; (2) livrer la version corrigée dans un .md à côté ; (3) si l'utilisateur veut un PDF en sortie, livrer le .md corrigé puis proposer sa régénération en PDF avec les outils de la session (skill pdf, pandoc) — en prévenant que la mise en page sera standard, pas celle de l'original.
 - **Environnement non interactif** (CI, `claude -p`, tâche sans tour suivant) → tout appliquer + résumé détaillé a posteriori. Les protections et l'anti-fabrication ne sont jamais levées.
 
 ## Processus — 2 passes, arrêt dur

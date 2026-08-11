@@ -7,7 +7,7 @@ Détecte et corrige les marques d'écriture IA — sans dénaturer un texte huma
 
 > « Enfin Malherbe vint. » — Boileau, *L'Art poétique*
 
-![Version](https://img.shields.io/badge/version-1.2.0-2d5f8a?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.2.1-2d5f8a?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-2d5f8a?style=flat-square)
 ![Patterns](https://img.shields.io/badge/patterns-84%20en%208%20familles-2d5f8a?style=flat-square)
 ![Registres](https://img.shields.io/badge/registres-4-2d5f8a?style=flat-square)
@@ -73,7 +73,7 @@ Ce mail sonne trop ChatGPT, corrige-le
 /malherbe --aide                       # mode d'emploi complet
 ```
 
-PDF : lu, jamais édité — malherbe corrige la source (.md, .docx) ou livre la version corrigée à côté.
+PDF : lu, jamais édité en place (le format ne le permet pas proprement). malherbe corrige la source (.md, .docx — mise en page préservée), ou livre la version corrigée en .md, ou la régénère en PDF neuf via les outils de la session (mise en page standard).
 
 Sur un **fichier**, malherbe liste d'abord ses corrections numérotées et attend ta validation avant d'éditer.
 

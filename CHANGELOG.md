@@ -1,5 +1,9 @@
 # Changelog — malherbe
 
+## 1.2.1 — 2026-08-11
+
+- **Aller-retour PDF documenté** : PDF en entrée → texte corrigé → régénération d'un PDF en sortie via les outils de la session (skill pdf, pandoc), avec avertissement explicite que la mise en page sera standard. La correction de la source (.md, .docx, .tex) reste le chemin recommandé — seul à préserver la mise en page. L'édition d'un PDF en place reste exclue (réalité du format, pas une limite du skill).
+
 ## 1.2.0 — 2026-08-11
 
 - **`--aide`** (aussi « malherbe help ») : le skill affiche son mode d'emploi — usage, modes, registres, fichiers de config, garanties — sans traiter de texte.
