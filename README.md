@@ -45,7 +45,7 @@ Avant publication, malherbe a été opposé à boileau et ultimate-humanizer sur
 ### Claude Code
 
 ```bash
-git clone https://github.com/VOTRE_COMPTE/malherbe.git
+git clone https://github.com/L4inLov3r/malherbe.git
 mkdir -p ~/.claude/skills/malherbe
 cp -r malherbe/SKILL.md malherbe/references malherbe/tests malherbe/scripts malherbe/evolution ~/.claude/skills/malherbe/
 ```
