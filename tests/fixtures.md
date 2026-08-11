@@ -168,7 +168,7 @@ Jeu d'évaluation de malherbe. Deux populations :
 
 ### SNF-7 — Texte québécois (professionnel, fr-CA)
 
-> Bonjour! Merci pour ton courriel. La rencontre est confirmée pour jeudi à 14 h : la salle est réservée au troisième étage. Peux-tu transférer l'invitation à l'équipe? On validera l'échéancier à ce moment-là.
+> Bonjour! Merci pour ton courriel. La rencontre est confirmée pour jeudi à 14 h : la salle est réservée au troisième étage. Peux-tu transférer l’invitation à l’équipe? On validera l’échéancier à ce moment-là.
 
 **Piège** : « Bonjour! » et « l'équipe? » SANS espace avant la ponctuation = norme OQLF ; l'espace insécable (U+00A0, réellement présente dans ce texte) reste devant le deux-points et dans « 14 h ». Ne JAMAIS « corriger » vers la norme France. « courriel », « échéancier » = lexique QC légitime. Attendu : aucun.
 
@@ -180,7 +180,7 @@ Jeu d'évaluation de malherbe. Deux populations :
 
 ### SNF-9 — Typographie parfaite (professionnel)
 
-> Le rapport annuel est disponible : les ventes progressent de 4,2 % au premier semestre. « Nous maintenons nos objectifs », a déclaré la directrice générale. L'entreprise compte 212 salariés répartis sur trois sites, dont le site historique d'Épinal.
+> Le rapport annuel est disponible : les ventes progressent de 4,2 % au premier semestre. « Nous maintenons nos objectifs », a déclaré la directrice générale. L’entreprise compte 212 salariés répartis sur trois sites, dont le site historique d’Épinal.
 
 **Piège** : guillemets français, espaces insécables (U+00A0, réellement présentes dans ce texte : avant le deux-points, dans les « », dans « 4,2 % »), virgule décimale, majuscule accentuée (Épinal) — la typographie soignée est une QUALITÉ, pas un signal IA. Attendu : aucun.
 

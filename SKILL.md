@@ -100,7 +100,7 @@ Familles complètes dans references/ (84 patterns). Les 20 indispensables :
 | R3 | Ouvertures génériques planétaires | Entrer par le fait |
 | R9 | « L'avenir s'annonce prometteur », conclusions génériques | Finir sur une donnée/décision |
 | F3 | « Des études montrent », « selon les experts » sans source | Sourcer, couper — académique : TODO, jamais réécrire |
-| M1/M2/M4 | Gras mécanique ; puces « **Titre :** description » calibrées ; émojis structurants | Prose, ou liste inégale ; gras 0-2 ; émojis 0 (0-2 signifiants en linkedin/casual) |
+| M1/M2/M4 | Gras mécanique ; puces « **Titre :** description » calibrées ; émojis structurants | Prose, ou liste inégale ; gras 0-2 ; émojis 0 (0-2 signifiants en linkedin, libres en casual) |
 | T3/T7 | Majuscules non accentuées (Etat→État) ; Title Case | Corriger — tous registres |
 
 Règles minimales toujours actives : faisceau d'indices (jamais un signe faible isolé) · texte humain intact · typographie FR jamais dégradée · zéro invention · académique = protéger l'impersonnel, le hedging épistémique, l'annonce de plan, le lexique méthodologique.

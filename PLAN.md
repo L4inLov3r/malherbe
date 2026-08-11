@@ -152,7 +152,7 @@ Le seuil de déclenchement et l'agressivité de réécriture varient donc PAR RE
 
 | Dimension | Compteur d'ancrage |
 |---|---|
-| Directité | Méta-annonces + amorces creuses restantes : 0 → 8-10 ; 1-2 → 4-7 ; 3+ → 0-3 |
+| Franchise | Méta-annonces + amorces creuses restantes : 0 → 8-10 ; 1-2 → 4-7 ; 3+ → 0-3 |
 | Rythme | Séquences de 3+ phrases de longueur ±3 mots : 0 → 8-10 ; 1 → 4-7 ; 2+ → 0-3 |
 | Densité | Adverbes vides + doublets restants : 0-1 → 8-10 ; 2-3 → 4-7 ; 4+ → 0-3 |
 | Registre | Violations de la matrice du registre actif : 0 → 8-10 ; 1-2 → 4-7 ; 3+ → 0-3 |
@@ -219,7 +219,7 @@ Intégrées après analyse des 6 meilleurs skills étrangers (rapport harnais.md
 8. **Anti-« même soupe »** : interdiction de remplacer un cliché par un cliché de la même famille (« il convient de noter » → « il est à souligner » = échec) ; liste des « faux traits humains » à ne pas injecter (fausse candeur, punchlines, drame artificiel).
 9. **Ancres sémantiques allégées** : avant réécriture, relever affirmations/chiffres/polarités/causalités ; après, vérifier PASS / AFFAIBLI (retry sur la phrase originale) / PERDU (restaurer l'original — rollback partiel).
 10. **Repli mono-fichier** : SKILL.md contient les règles minimales garanties si references/ n'est pas chargé (dégradation propre).
-11. **« Voice Read »** : une ligne avant réécriture (« Je lis ceci comme : [type] pour [audience], registre [X] ») + « À trancher toi-même » (flags de ce que le skill n'ose pas décider seul).
+11. **« Lecture »** : une ligne avant réécriture (« Je lis ceci comme : [type] pour [audience], registre [X] ») + « À trancher toi-même » (flags de ce que le skill n'ose pas décider seul).
 12. **Doctrine Wikipédia** : le style n'est qu'un faisceau d'indices — le seul test décisif est la vérification des faits/sources ; style hétérogène → ne réécrire que les segments suspects ; jamais de verdict sur un signe isolé ; corriger la surface sans traiter le fond « rend juste la détection plus difficile » (le signaler).
 13. **Signes d'humanité = liste de préservation** : « il y a », « c'est », mots simples (a écrit vs a rédigé), superlatifs assumés, « très/peut-être », imperfections délibérées — ne JAMAIS les « améliorer ».
 
