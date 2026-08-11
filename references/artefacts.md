@@ -54,7 +54,7 @@ Texte qui s'arrête net en milieu de phrase ou de section (limite de génératio
 
 ## A9 — Balisage du mauvais système
 
-`**gras**` Markdown dans un e-mail ou un doc Word, `[texte](url)` hors Markdown, ` ``` ` visibles, `#` de titres dans un texte de prose. Indicateur FORT en contexte non-Markdown, FAIBLE en contexte technique (les développeurs écrivent du Markdown partout). → Convertir vers le format du support de destination.
+`**gras**` Markdown dans un e-mail ou un doc Word, `[texte](url)` hors Markdown, ` ``` ` visibles, `#` de titres dans un texte de prose, séparateurs `---` hors support Markdown. Indicateur FORT en contexte non-Markdown, FAIBLE en contexte technique (les développeurs écrivent du Markdown partout). → Convertir vers le format du support de destination.
 
 ## A10 — Gabarit biographique standardisé (cas FR documenté par Wikipédia)
 

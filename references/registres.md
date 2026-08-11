@@ -145,7 +145,7 @@ Le registre le moins interventionniste. On corrige le pire, on préserve la pers
 | Anti-répétition terminologique | OFF | doux | ON | ON |
 | Typographie | stricte (print) | stricte (web) | tolérante | préservation |
 | Attribution vague | TODO bloquant | corriger | corriger | signaler |
-| Oralité (« du coup », « bref ») | corriger | signaler | préserver | préserver |
+| Oralité (« du coup », « bref ») | corriger | signaler (en rafale seulement — UNE occurrence portant une opinion assumée est une signature d'humanité, anti-faux-positifs §3) | préserver | préserver |
 | Longueur de phrase — seuil d'alerte | ~40-45 mots | ~30 | ~25 | libre |
 | Émojis | corriger | corriger | 0-2 tolérés | libres |
 | Sortie signalements (TODO) | systématique | si vide | si vide/fabriqué | rare |

@@ -7,7 +7,7 @@ Détecte et corrige les marques d'écriture IA — sans dénaturer un texte huma
 
 > « Enfin Malherbe vint. » — Boileau, *L'Art poétique*
 
-![Version](https://img.shields.io/badge/version-1.0.0-2d5f8a?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.1.0-2d5f8a?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-2d5f8a?style=flat-square)
 ![Patterns](https://img.shields.io/badge/patterns-84%20en%208%20familles-2d5f8a?style=flat-square)
 ![Registres](https://img.shields.io/badge/registres-4-2d5f8a?style=flat-square)
@@ -28,6 +28,10 @@ malherbe est construit EN français, POUR le français :
 - **4 registres** — académique, professionnel, LinkedIn, casual — parce qu'un même marqueur peut être un tic sur LinkedIn et une convention obligatoire dans une thèse. C'est la matrice de registres qui décide, pas une liste de mots interdits.
 - **Typographie française normative et jamais dégradée** : guillemets « », espaces insécables, majuscules accentuées (État, À), virgule décimale — avec les différences France/Québec documentées et respectées.
 - **Ultra-prudent sur les faux positifs** : seuil de déclenchement en faisceau, patterns faibles qui ne déclenchent jamais seuls, liste des signes d'écriture humaine à préserver, garde anti-sur-édition (« si le passage a un pouls, la bonne édition est souvent : aucune »).
+
+## Testé en aveugle contre ses prédécesseurs
+
+Avant publication, malherbe a été opposé à boileau et ultimate-humanizer sur trois textes neufs (académique, LinkedIn, e-mail humain piège), sorties anonymisées, deux juges indépendants. **Classement identique chez les deux juges : malherbe premier** (135/150 et 133/150) — zéro fabrication ET zéro perte d'attribution silencieuse (seul à cumuler les deux), meilleure déslopification du post LinkedIn. Un des concurrents a inventé une anecdote vécue complète au nom de l'auteur — c'est exactement ce contre quoi malherbe est conçu. Protocole, scores, citations des juges et limites : [docs/benchmark.md](docs/benchmark.md).
 
 ## Ce que malherbe refuse de faire
 
@@ -53,6 +57,10 @@ mkdir -p ~/.agents/skills/malherbe
 cp -r malherbe/SKILL.md malherbe/references malherbe/tests malherbe/scripts malherbe/evolution ~/.agents/skills/malherbe/
 ```
 
+### N'importe quel assistant (ChatGPT, Gemini, Mistral…)
+
+[`standalone/malherbe-standalone.md`](standalone/malherbe-standalone.md) est une version condensée en un seul fichier, à coller dans les instructions personnalisées de n'importe quel assistant. Moins fine que la version complète (pas de fixtures, matrice de registres résumée), mais autonome.
+
 ## Usage
 
 ```
@@ -65,6 +73,10 @@ Ce mail sonne trop ChatGPT, corrige-le
 ```
 
 Sur un **fichier**, malherbe liste d'abord ses corrections numérotées et attend ta validation avant d'éditer.
+
+**Boucle de complétion** : quand il manque une source ou un fait (malherbe n'invente jamais), le skill pose directement ses questions (3 max, groupées, en session interactive) et intègre tes réponses — le placeholder est une question, pas une impasse.
+
+**Profils persistants** (opt-in) : `malherbe-voix.md` à la racine de ton projet mémorise ta voix calibrée (fini de recoller l'échantillon --voice) ; `.malherbe.md` fixe le registre par défaut et ton lexique métier whitelisté — les termes de ton domaine que le skill ne « corrigera » jamais.
 
 ## Les 8 familles
 
@@ -85,9 +97,13 @@ Un humanizer naïf détruit un mémoire : l'impersonnel, le passif méthodologiq
 
 ## Qualité mesurable
 
-- **Benchmark apparié** : 12 cas « doit corriger » (dont un cas d'injection de prompt) + 10 pièges « ne doit PAS toucher ». Cibles : rappel ≥ 90 %, faux positifs = 0. Protocole : `--selftest`.
+- **Benchmark apparié** : 16 cas « doit corriger » (dont un cas d'injection de prompt) + 13 pièges « ne doit PAS toucher ». Cibles : rappel ≥ 90 %, faux positifs = 0. Protocole : `--selftest`. Dernier run mesuré (v1.0.0, 12+10 cas) : rappel 100 %, faux positifs 0.
 - **Gate final à compteurs écrits** : avant de livrer, le skill compte ses propres résidus (y compris les zéros) et liste les longueurs de phrases en chiffres — parce qu'une relecture « de tête » semble toujours propre au modèle qui vient d'écrire.
 - **`scripts/audit.py`** : les mêmes compteurs en déterministe (Python stdlib, hors ligne), avec vérification d'invariant typographique (`python3 scripts/audit.py avant.md apres.md` → code retour 1 si la typographie a été dégradée).
+
+## Contribuer
+
+Faux positif ? Pattern manquant ? Les templates d'issues sont prêts, et [CONTRIBUTING.md](CONTRIBUTING.md) décrit les invariants du projet (règle de croissance appariée SF/SNF, cadence de révision du lexique, refus de l'anti-détection). CI : `scripts/verifie.py` (intégrité, y compris à l'octet) + `scripts/audit.py` tournent sur chaque PR.
 
 ## Crédits
 

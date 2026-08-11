@@ -59,6 +59,12 @@ Règles :
 - La calibration contraint le STYLE, jamais le fond : aucun contenu nouveau.
 - Sans échantillon : viser un français naturel, concret, direct — pas un « style » plaqué.
 
+## Profil de voix persistant (`malherbe-voix.md`)
+
+Après une calibration --voice réussie, PROPOSER à l'utilisateur de sauvegarder le profil distillé dans `malherbe-voix.md` à la racine de son projet — jamais d'écriture sans son accord. Format du fichier : les 5 dimensions ci-dessus en clair (longueurs mesurées, registre, ponctuation, attaques, tics protégés), plus une ligne de date. Aux exécutions suivantes, le skill le charge automatiquement (étape 0) : la voix est calibrée sans recoller d'échantillon. Le profil se met à jour sur demande (« recalibre ma voix ») — jamais silencieusement.
+
+Fichier compagnon `.malherbe.md` (config projet, même logique opt-in) : registre par défaut du projet, variété (fr-FR/fr-CA), lexique maison whitelisté — les termes métier du projet qui ne doivent JAMAIS être comptés comme tics ni « variés ».
+
 ## Lecture (une ligne, avant de réécrire)
 
 Annoncer la lecture : « Je lis ceci comme : [type de texte] pour [audience], registre [A/P/L/C], variété [fr-FR/fr-CA] » — et, si --voice : « voix calibrée sur ton échantillon : phrases courtes, tutoiement, ironie sèche ». Ça ancre les choix et permet à l'utilisateur de corriger AVANT la réécriture.

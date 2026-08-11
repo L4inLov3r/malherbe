@@ -14,7 +14,7 @@ Jeu d'évaluation de malherbe. Deux populations :
 
 **Règle des occurrences sous seuil** : quand un cas SF est assez dense pour déclencher le traitement complet (2+ patterns forts), les marqueurs à seuil de densité présents en occurrence UNIQUE se rapportent quand même, annotés « sous seuil — compte en faisceau ». C'est ainsi que les attendus marqués (fais.) ci-dessous se comptent au rappel : le faisceau du cas les rend rapportables, jamais leur occurrence isolée. Hors faisceau, un marqueur sous seuil ne se rapporte pas (voir anti-faux-positifs.md §5).
 
-**Règles de non-cumul** (paires équivalentes — un segment ne compte qu'une fois PAR paire) : « non seulement… mais aussi » = S2 (pas C2 en plus) · « il convient de noter » = R1 (pas R2) · un participe déjà compté S5 ne compte pas L3 sur le même mot · Title Case = T7 (M7 y renvoie) · une maxime en forme de contraste : R12 si elle conclut, S2 sinon — jamais les deux sur le même segment · « initier un projet » = C1, pas L4 · « il convient de » en académique : seuil registres.md (1/page toléré), prioritaire.
+**Règles de non-cumul** (paires équivalentes — un segment ne compte qu'une fois PAR paire) : « non seulement… mais aussi » = S2 (pas C2 en plus) · « il convient de noter » = R1 (pas R2) · un participe déjà compté S5 ne compte pas L3 sur le même mot · Title Case = T7 (M7 y renvoie) · une maxime en forme de contraste : R12 si elle conclut, S2 sinon — jamais les deux sur le même segment · « initier un projet » = C1, pas L4 · annonce de plan mécanique hors académique = S11 (pas R4 en plus) · question suivie de « c'est ce que nous allons voir » = S14 (pas R4) · balisage gras hors support Markdown = A9 (pas M1) · « il convient de » en académique : seuil registres.md (1/page toléré), prioritaire.
 
 **Règle de croissance appariée** : tout nouveau pattern du catalogue doit ajouter ici UN cas SF qui le contient ET UN cas SNF voisin qui ne doit pas déclencher.
 
@@ -120,6 +120,36 @@ Jeu d'évaluation de malherbe. Deux populations :
 
 **Patterns attendus** : A1 (oaicite), A2 (utm_source — retirer le paramètre, garder l'URL), A3 ([Votre nom]), F3 (« selon une étude récente » non sourcée — le signalement « vérifier les faits et les sources » est obligatoire dès qu'un artefact A est présent).
 
+### SF-TOUR — Page de tourisme slopée (professionnel)
+
+> Nichée au cœur d'un écrin de verdure, la ville de Vaulnay est un véritable joyau au charme authentique. La cité séduit par son riche patrimoine et ses panoramas à couper le souffle. Fait remarquable, la commune a su préserver son cachet, ce qui est tout simplement admirable. Dans le cadre de la valorisation de son centre historique, il a été décidé de réaménager la place du marché, et des efforts ont été engagés au niveau de l'attractivité commerciale. Notre belle localité vous attend pour un dépaysement garanti.
+
+**Patterns attendus** : L6 (densité brochure : nichée au cœur, écrin de verdure, joyau, charme authentique, riche patrimoine, à couper le souffle, dépaysement garanti), S9 (la ville → la cité → la commune → notre belle localité : quatre désignations du même référent quand la reprise serait plus claire), F8 (« Fait remarquable » + « tout simplement admirable »), R2 (dans le cadre de + « au niveau de » non spatial), L2 (véritable — fais.), S8 (« il a été décidé de » — marqueur littéral, l'acteur est masqué).
+**Piège interne** : le SUJET touristique ne déclenche rien — c'est la densité de clichés qui fait L6 (voir SNF-12).
+
+### SF-BLOG — Article de blog mécanique (professionnel)
+
+> Dans cet article, nous allons découvrir pourquoi la gestion du temps est moins simple qu'on ne le pense. Dans un premier temps, nous verrons les causes ; dans un second temps, les solutions ; enfin, nous conclurons. Ce qu'il faut comprendre, c'est que derrière les chiffres se cache une réalité plus nuancée. Comment expliquer ce phénomène ? C'est ce que nous allons voir. La méthode des blocs de temps change la donne, et c'est précisément là que tout se joue.
+
+**Patterns attendus** : R4 (« Dans cet article, nous allons » — hors registre académique, le méta-commentaire est un tic), S11 (squelette « Dans un premier temps… second… enfin » mécanique hors dissertation), C3 (« moins simple qu'on ne le pense », « derrière les chiffres se cache une réalité plus nuancée »), R5 (« Ce qu'il faut comprendre, c'est que »), S14 (« Comment expliquer ce phénomène ? C'est ce que nous allons voir. »), R6 (« et c'est précisément là que tout se joue »), T2 (espaces sécables avant ; et ? — fais.).
+
+### SF-FIC — Fiction pseudo-littéraire (casual — fiction)
+
+> Elle s'avança dans un instant suspendu, comme si le temps s'était figé.... Un secret brûlant vibrait entre eux, comme une promesse murmurée. Il la regardait avec un désir vibrant, comme une évidence silencieuse. Le silence vibrant les enveloppait doucement, comme un serment oublié.
+
+**Patterns attendus** : L8 (instant suspendu, comme si le temps s'était figé, secret brûlant, promesse murmurée, désir vibrant, silence vibrant, comparaisons en « comme » ×4), T12 (« .... »), S13 (quatre phrases de longueur quasi identique).
+**Observation non comptée** : la famille vibrer/vibrant apparaît trois fois (vibrant ×2 + vibrait) — l'esprit de L10 (mot fétiche), mais sous son seuil (4+/500 mots) et Ignorer en casual ; le signal est déjà porté par L8, pas de double comptage.
+
+### SF-CONV — Document recopié du chat (casual)
+
+> En tant qu'IA, je ne peux pas envoyer le mail à votre place, mais voici une version que vous pouvez copier :
+> **Objet :** Point d'étape
+> Bonjour l'équipe, à ma dernière mise à jour, le projet avançait selon le planning. Les **livrables** sont prêts et l'équipe reste **mobilisée**. Selon les informations disponibles, la réunion de vendredi est maintenue.
+> ---
+> N'hésitez pas si vous souhaitez que j'adapte le ton !
+
+**Patterns attendus** : A5 (« En tant qu'IA, je ne peux pas… mais »), A4 (« voici une version » + « N'hésitez pas si vous souhaitez »), A6 (« à ma dernière mise à jour », « selon les informations disponibles »), A9 (balisage `**gras**` Markdown et séparateur `---` dans un e-mail — le gras compte A9 ici, pas M1 : c'est le mauvais système de balisage qui est le signal).
+
 ---
 
 ## Cas SNF (ne doivent RIEN déclencher)
@@ -190,10 +220,28 @@ Jeu d'évaluation de malherbe. Deux populations :
 
 **Piège** : trop court pour statuer — attendu : refus de statuer, aucune correction.
 
+### SNF-11 — Discours de remerciement humain (casual — oratoire)
+
+> Merci à celles qui ont tenu la permanence tous les samedis depuis janvier. Merci à ceux qui ont préparé les 400 repas. Merci à Djamila, qui a réparé la chaudière du local avec les moyens du bord. Ce soir, on fête dix ans — et c'est grâce à vous.
+
+**Piège** : anaphore assumée (« Merci à… Merci à… Merci à… ») d'un discours réel, portée par des référents concrets (samedis depuis janvier, 400 repas, la chaudière, Djamila) — exclusion S6, jamais comptée. Le cas SF apparié est l'anaphore marketing abstraite (S6, non couverte en SF — à apparier lors de son ajout). Attendu : aucun.
+
+### SNF-12 — Texte touristique humain (professionnel)
+
+> Vaulnay compte 3 200 habitants. Son marché du jeudi existe depuis 1712 ; on y trouve encore deux maraîchers du plateau. L’église Saint-Martin, refaite après l’incendie de 1954, se visite le week-end. Franchement, le point de vue du calvaire vaut la montée : on voit la vallée jusqu’à Brissac par temps clair.
+
+**Piège** : même sujet que SF-TOUR, zéro cliché — dates, chiffres, noms, opinion assumée (« Franchement… vaut la montée »). Le sujet touristique ne déclenche pas L6 ; la densité de clichés le fait. Attendu : aucun.
+
+### SNF-13 — Copie d'étudiant humaine (académique)
+
+> Dans un premier temps, ce devoir présente le cadre juridique du licenciement économique ; il examine ensuite la jurisprudence récente. Peut-on licencier pour sauvegarder la compétitivité ? La chambre sociale l’admet depuis 1995, sous conditions strictes. Nous verrons que ces conditions se sont durcies depuis 2020, notamment sur le périmètre d’appréciation.
+
+**Piège** : « Dans un premier temps » UNIQUE dans une annonce de plan académique = convention protégée (S11 ne vise que le squelette mécanique répété, et le registre académique protège l'annonce de plan) ; UNE question rhétorique suivie d'une vraie réponse = admise (S14 vise la cascade et le setup sans réponse) ; « Nous verrons que » = transition conventionnelle du genre. Attendu : aucun.
+
 ---
 
 ## Couverture
 
-SF : A1-A4 · L1, L1b, L2, L4, L5, L7 · C1, C2 · S1-S5, S10, S12 · R1, R3, R9, R10, R11, R12 · F1-F4, F6 · M2, M4, M5, M6 · T2, T3, T6, T7, T8 · injection.
-SNF (pièges par registre) : conventions académiques (SNF-1), doc technique et passif S8 (SNF-2), oralité casual et fragments R11 (SNF-3, SNF-5), rituel administratif et lecture littérale C1 (SNF-4), format LinkedIn légitime (SNF-6), variété fr-CA (SNF-7), triades/anaphores concrètes S3/S6 et typo littéraire (SNF-8), typo soignée (SNF-9), texte court (SNF-10).
-Non couverts (à apparier lors d'un prochain ajout) : A5-A10 · L3, L6, L8-L10 · C3-C5 · S6-S9, S11, S13-S14 · R2, R4-R8 · F5, F7-F12 · M1, M3, M8 · T1, T4, T5, T9-T13.
+SF : A1-A6, A9 · L1, L1b, L2, L4-L8 · C1-C3 · S1-S5, S8-S14 · R1-R6, R9-R12 · F1-F4, F6, F8 · M2, M4, M5, M6 · T2, T3, T6, T7, T8, T12 · injection.
+SNF (pièges par registre) : conventions académiques (SNF-1, SNF-13), doc technique et passif S8 (SNF-2), oralité casual et fragments R11 (SNF-3, SNF-5), rituel administratif et lecture littérale C1 (SNF-4), format LinkedIn légitime (SNF-6), variété fr-CA (SNF-7), triades/anaphores concrètes S3/S6 et typo littéraire (SNF-8, SNF-11), sujet touristique sans clichés (SNF-12), typo soignée (SNF-9), texte court (SNF-10).
+Non couverts (à apparier lors d'un prochain ajout) : A7, A8, A10 · L3, L9, L10 · C4, C5 · S6 (côté SF), S7 · R7, R8 (côté SF — le côté SNF est exercé par SNF-5 et SNF-12) · F5, F7, F9-F12 · M1, M3, M8 · T1, T4, T5, T9-T11, T13.
