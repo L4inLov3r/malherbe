@@ -117,6 +117,21 @@ Sources normatives et communautaires : Wikipédia FR (*Aide:Identifier l'usage d
 
 ---
 
-## English summary
+*Dogfooding : ce README a été soumis à malherbe, gate de vérification compris. Les cinq retouches proposées ont été rejetées par ses propres règles anti-sur-édition — verdict final : texte d'auteur, rien à corriger. C'est le comportement attendu : la moitié du métier d'un humanizer est de savoir ne pas toucher.*
 
-**malherbe** is a French-native Claude Code skill that detects and removes AI-writing patterns from French text. 84 patterns in 8 families, register-aware (academic / professional / LinkedIn / casual — the same marker can be an AI tell in one register and a mandatory convention in another), with normative French typography that is never degraded, strict anti-fabrication rules (missing facts become author TODOs, never inventions), a paired SF/SNF benchmark, and a deterministic audit script. It aims at writing quality, not detector evasion. MIT — credits: boileau, ultimate-humanizer, blader/humanizer.
+---
+
+## In English
+
+**malherbe** is a French-native agent skill that detects and removes AI-writing patterns from French text — without distorting human writing, without degrading French typography, without inventing anything.
+
+Existing humanizers are built for English; applied to French, they destroy what they should protect (one converts French « guillemets » into straight quotes; another deletes the thesis outline announcement that French academic writing *requires*). malherbe is built **for** French, from French sources (Wikipédia FR, OQLF, Académie française, seven francophone practitioner catalogs):
+
+- **84 patterns in 8 families** — literal markers, thresholds, exclusions, before/after examples, sources.
+- **Register-aware** (academic / professional / LinkedIn / casual): the same marker can be an AI tell in one register and a mandatory convention in another. In academic mode, unsourced attribution becomes an author TODO — never a silent rewrite.
+- **French typography, never degraded** — including the France/Québec differences, both respected.
+- **Strict anti-fabrication**: missing facts become questions to the author, never inventions.
+- **Blind-judged benchmark** against its two predecessors — ranked first by both judges ([docs/benchmark.md](docs/benchmark.md)) — plus a paired should-fix/should-not-fix test suite (16+13 cases) and a deterministic audit script.
+- It aims at writing quality, **not detector evasion** — anti-detection features are explicitly refused.
+
+Works with Claude Code (`~/.claude/skills/`), any agent reading `~/.agents/skills/`, or any assistant via the single-file [standalone version](standalone/malherbe-standalone.md). MIT — credits: [boileau](https://github.com/alxbd/boileau), [ultimate-humanizer](https://github.com/surdijon/ultimate-humanizer), [blader/humanizer](https://github.com/blader/humanizer).
