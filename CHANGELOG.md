@@ -1,5 +1,10 @@
 # Changelog — malherbe
 
+## 1.2.0 — 2026-08-11
+
+- **`--aide`** (aussi « malherbe help ») : le skill affiche son mode d'emploi — usage, modes, registres, fichiers de config, garanties — sans traiter de texte.
+- **Comportement PDF explicite** : un PDF est lu (jamais édité) ; la version corrigée sort en conversation ou dans un .md à côté, et le skill propose de corriger la source éditable (.md, .docx, .tex) quand elle existe.
+
 ## 1.1.0 — 2026-08-11
 
 - **Boucle de complétion interactive** : les placeholders « (à compléter par l'auteur : …) » deviennent des questions posées directement à l'utilisateur (3 max, groupées), intégrées dans une version finale — en session interactive uniquement.
