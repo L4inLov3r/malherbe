@@ -2,6 +2,12 @@
 
 Merci ! Ce dépôt a des règles de maintenance strictes — elles sont ce qui l'empêche de devenir un catalogue de préjugés stylistiques.
 
+## Philosophie : la pertinence, pas les fonctionnalités
+
+Le chemin par défaut doit rester sans friction : coller un texte, dire « humanise ça », c'est tout — aucun flag, aucune config, aucun apprentissage requis. Tout le reste (registres, niveaux, profils) est optionnel et doit le rester.
+
+En conséquence, **les nouvelles fonctionnalités sont refusées par défaut**. Les gains de ce projet viennent de trois sources, et de trois seulement : l'étalonnage sur corpus réel (docs/etalonnage.md), les faux positifs signalés et corrigés, la fraîcheur du lexique (révision par génération de modèles). Une PR qui ajoute un mode, un flag ou une option devra démontrer qu'aucun de ces trois leviers ne pouvait produire le même gain — la charge de la preuve est de son côté. Un outil de détection vaut par sa justesse, pas par sa surface.
+
 ## Les invariants (non négociables)
 
 1. **Un pattern = des marqueurs littéraux, des seuils, des exclusions, des sources.** Pas de « ça sonne IA » : des mots exacts, une condition de déclenchement, ce qui ne déclenche PAS, et au moins deux sources indépendantes (ou un corpus).
