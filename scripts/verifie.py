@@ -85,7 +85,7 @@ for nom, texte, char, minimum in [
     ("typographie.md U+00A0", typo, " ", 1),
     ("typographie.md U+202F", typo, " ", 1),
     ("typographie.md U+2019", typo, "’", 8),
-    ("fixtures.md U+00A0 (SNF soignées)", fixtures, " ", 7),
+    ("fixtures.md U+00A0 (SNF soignées)", fixtures, " ", 10),
     ("fixtures.md U+202F (SNF soignées)", fixtures, " ", 3),
 ]:
     n = texte.count(char)
@@ -94,7 +94,7 @@ for nom, texte, char, minimum in [
     else:
         ok(f"{nom} : {n} ≥ {minimum}")
 
-for tag in ("SNF-7", "SNF-9", "SNF-12", "SNF-13"):
+for tag in ("SNF-7", "SNF-9", "SNF-12", "SNF-13", "SNF-15"):
     bloc = fixtures.split(f"### {tag}")[1].split("###")[0]
     lignes = [l for l in bloc.splitlines() if l.startswith(">")]
     droites = sum(l.count("'") for l in lignes)
@@ -133,6 +133,19 @@ if trouvees:
         echec(t)
 else:
     ok("aucune chaîne interdite")
+
+# --- 5 bis. Décomptes SF/SNF annoncés --------------------------------------
+
+print("\n[5 bis] Décomptes SF/SNF")
+n_sf = len(re.findall(r"^### SF-", fixtures, re.M))
+n_snf = len(re.findall(r"^### SNF-", fixtures, re.M))
+attendus_ok = True
+for chemin, motif in [("README.md", rf"{n_sf} cas"), ("CHANGELOG.md", rf"{n_sf} SF \+ {n_snf} SNF")]:
+    if not re.search(motif, lire(chemin)):
+        echec(f"{chemin} n'annonce pas le décompte réel ({n_sf} SF / {n_snf} SNF)")
+        attendus_ok = False
+if attendus_ok:
+    ok(f"{n_sf} SF + {n_snf} SNF, décomptes annoncés cohérents")
 
 # --- 6. Cohérence des versions -------------------------------------------------
 

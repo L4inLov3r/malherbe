@@ -42,15 +42,19 @@ Interdits : allonger pour faire « riche » (le remplissage réintroduit les pat
 - **Le « je » quand le genre l'appelle** (LinkedIn, blog perso) — si l'auteur parle déjà en « je ». Ne jamais convertir un « nous » académique en « je » ni l'inverse.
 - **Une pointe d'humour ou d'autodérision** : uniquement en réagençant ce que l'auteur a dit (son aveu, son échec raconté) — jamais en inventant le trait.
 
-## Calibration de voix (--voice + échantillon de 2-3 paragraphes)
+## Calibration de voix (--voice + échantillon)
+
+**Taille de l'échantillon** : idéalement 3 à 5 pages (1 000 mots ou plus) de la MÊME famille de textes que celui à traiter — c'est ce qui permet un profil mesuré et non impressionniste. En dessous (2-3 paragraphes), calibrer quand même mais le dire : « échantillon court — profil grossier, à affiner ».
 
 Distiller l'échantillon en hypothèses TESTABLES, puis contraindre la réécriture :
 
-1. **Longueurs** : moyenne et étalement des phrases de l'échantillon (écrire les chiffres).
-2. **Registre** : tutoiement/vouvoiement, niveau de langue, densité de jargon assumé.
-3. **Ponctuation** : usage des deux-points, parenthèses, tirets, points de suspension.
-4. **Attaques de phrase et transitions** : entre directement ou contextualise ? connecteurs favoris ?
-5. **Tics personnels** : mots fétiches, images récurrentes, manière de trancher ou de nuancer, ironie.
+1. **Longueurs** : moyenne, écart-type et distribution des phrases (écrire les chiffres) ; longueur des paragraphes.
+2. **Registre** : tutoiement/vouvoiement, « je »/« nous »/impersonnel, niveau de langue, densité de jargon assumé.
+3. **Ponctuation** : usage des deux-points, parenthèses, tirets, points de suspension, point-virgule.
+4. **Attaques de phrase et transitions** : entre directement ou contextualise ? connecteurs favoris et leur densité mesurée ?
+5. **Construction** : taux de nominalisation (« la mise en place de » vs « mettre en place »), passif/actif, subordination ou juxtaposition.
+6. **Manière de citer** (crucial en académique) : citation intégrée (« comme le montre X ») ou parenthétique (Auteur, année) ; guillemets longs ou reformulation.
+7. **Tics personnels** : mots fétiches, images récurrentes, manière de trancher ou de nuancer, ironie.
 
 Règles :
 - Ne pas seulement retirer les patterns IA : les remplacer par les patterns DE L'ÉCHANTILLON.
@@ -61,7 +65,7 @@ Règles :
 
 ## Profil de voix persistant (`malherbe-voix.md`)
 
-Après une calibration --voice réussie, PROPOSER à l'utilisateur de sauvegarder le profil distillé dans `malherbe-voix.md` à la racine de son projet — jamais d'écriture sans son accord. Format du fichier : les 5 dimensions ci-dessus en clair (longueurs mesurées, registre, ponctuation, attaques, tics protégés), plus une ligne de date. Aux exécutions suivantes, le skill le charge automatiquement (étape 0) : la voix est calibrée sans recoller d'échantillon. Le profil se met à jour sur demande (« recalibre ma voix ») — jamais silencieusement.
+Après une calibration --voice réussie, PROPOSER à l'utilisateur de sauvegarder le profil distillé dans `malherbe-voix.md` à la racine de son projet — jamais d'écriture sans son accord. Format du fichier : les 7 dimensions ci-dessus en clair et CHIFFRÉES quand c'est mesurable (longueurs, densité de connecteurs, taux de nominalisation), les tics protégés, une section « à surveiller » optionnelle, la taille de l'échantillon source, plus une ligne de date. Règles opérantes : les TICS PROTÉGÉS priment sur le catalogue (jamais corrigés) ; les marqueurs « À SURVEILLER » se traitent au seuil du cran inférieur — plus strict que le registre — parce que l'auteur lui-même les a désignés. Modèle complet dans `docs/config-projet.md` du dépôt. Aux exécutions suivantes, le skill le charge automatiquement (étape 0) : la voix est calibrée sans recoller d'échantillon. Le profil se met à jour sur demande (« recalibre ma voix ») — jamais silencieusement.
 
 Fichier compagnon `.malherbe.md` (config projet, même logique opt-in) : registre par défaut du projet, variété (fr-FR/fr-CA), lexique maison whitelisté — les termes métier du projet qui ne doivent JAMAIS être comptés comme tics ni « variés ».
 

@@ -7,7 +7,7 @@ Détecte et corrige les marques d'écriture IA — sans dénaturer un texte huma
 
 > « Enfin Malherbe vint. » — Boileau, *L'Art poétique*
 
-![Version](https://img.shields.io/badge/version-1.2.1-2d5f8a?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.3.0-2d5f8a?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-2d5f8a?style=flat-square)
 ![Patterns](https://img.shields.io/badge/patterns-84%20en%208%20familles-2d5f8a?style=flat-square)
 ![Registres](https://img.shields.io/badge/registres-4-2d5f8a?style=flat-square)
@@ -67,8 +67,11 @@ cp -r malherbe/SKILL.md malherbe/references malherbe/tests malherbe/scripts malh
 Humanise ce texte : [texte]
 Ce mail sonne trop ChatGPT, corrige-le
 /malherbe --registre academique [chapitre de mémoire]
+/malherbe --chapitre memoire.md        # long document : section par section, structure gelée
+/malherbe --niveau leger [texte]       # ampleur : leger / moyen (défaut) / agressif
 /malherbe --dry-run [texte]            # diagnostic sans réécriture
-/malherbe --voice [2-3 § de ton écriture] -- [texte]
+/malherbe --diff [texte]               # seulement les segments modifiés
+/malherbe --voice [3-5 pages de ton écriture] -- [texte]
 /malherbe --explain [texte]            # avant/après détaillé
 /malherbe --aide                       # mode d'emploi complet
 ```
@@ -79,7 +82,7 @@ Sur un **fichier**, malherbe liste d'abord ses corrections numérotées et atten
 
 **Boucle de complétion** : quand il manque une source ou un fait (malherbe n'invente jamais), le skill pose directement ses questions (3 max, groupées, en session interactive) et intègre tes réponses — le placeholder est une question, pas une impasse.
 
-**Profils persistants** (opt-in) : `malherbe-voix.md` à la racine de ton projet mémorise ta voix calibrée (fini de recoller l'échantillon --voice) ; `.malherbe.md` fixe le registre par défaut et ton lexique métier whitelisté — les termes de ton domaine que le skill ne « corrigera » jamais.
+**Profils persistants** (opt-in) : `malherbe-voix.md` à la racine de ton projet mémorise ta voix calibrée (fini de recoller l'échantillon --voice) ; `.malherbe.md` fixe le registre par défaut, le niveau, et ton **glossaire métier** — les termes de ton domaine (due diligence, covenant, aléa moral…) que le skill ne corrigera jamais, ne « variera » jamais et ne comptera jamais comme tics. Modèles commentés : [docs/config-projet.md](docs/config-projet.md).
 
 ## Les 8 familles
 
@@ -100,7 +103,7 @@ Un humanizer naïf détruit un mémoire : l'impersonnel, le passif méthodologiq
 
 ## Qualité mesurable
 
-- **Benchmark apparié** : 16 cas « doit corriger » (dont un cas d'injection de prompt) + 13 pièges « ne doit PAS toucher ». Cibles : rappel ≥ 90 %, faux positifs = 0. Protocole : `--selftest`. Dernier run mesuré (v1.0.0, 12+10 cas) : rappel 100 %, faux positifs 0.
+- **Benchmark apparié** : 17 cas « doit corriger » (dont un cas d'injection de prompt) + 15 pièges « ne doit PAS toucher ». Cibles : rappel ≥ 90 %, faux positifs = 0 — à tout niveau d'intervention. Protocole : `--selftest`. Dernier run mesuré (v1.0.0, 12+10 cas) : rappel 100 %, faux positifs 0.
 - **Gate final à compteurs écrits** : avant de livrer, le skill compte ses propres résidus (y compris les zéros) et liste les longueurs de phrases en chiffres — parce qu'une relecture « de tête » semble toujours propre au modèle qui vient d'écrire.
 - **`scripts/audit.py`** : les mêmes compteurs en déterministe (Python stdlib, hors ligne), avec vérification d'invariant typographique (`python3 scripts/audit.py avant.md apres.md` → code retour 1 si la typographie a été dégradée).
 
@@ -131,7 +134,7 @@ Existing humanizers are built for English; applied to French, they destroy what 
 - **Register-aware** (academic / professional / LinkedIn / casual): the same marker can be an AI tell in one register and a mandatory convention in another. In academic mode, unsourced attribution becomes an author TODO — never a silent rewrite.
 - **French typography, never degraded** — including the France/Québec differences, both respected.
 - **Strict anti-fabrication**: missing facts become questions to the author, never inventions.
-- **Blind-judged benchmark** against its two predecessors — ranked first by both judges ([docs/benchmark.md](docs/benchmark.md)) — plus a paired should-fix/should-not-fix test suite (16+13 cases) and a deterministic audit script.
+- **Blind-judged benchmark** against its two predecessors — ranked first by both judges ([docs/benchmark.md](docs/benchmark.md)) — plus a paired should-fix/should-not-fix test suite (17+15 cases) and a deterministic audit script.
 - It aims at writing quality, **not detector evasion** — anti-detection features are explicitly refused.
 
 Works with Claude Code (`~/.claude/skills/`), any agent reading `~/.agents/skills/`, or any assistant via the single-file [standalone version](standalone/malherbe-standalone.md). MIT — credits: [boileau](https://github.com/alxbd/boileau), [ultimate-humanizer](https://github.com/surdijon/ultimate-humanizer), [blader/humanizer](https://github.com/blader/humanizer).

@@ -1,5 +1,17 @@
 # Changelog — malherbe
 
+## 1.3.0 — 2026-08-12
+
+- **`--chapitre` (et détection automatique des longs documents)** : traitement section par section avec structure gelée (titres, annonces de plan, transitions, conclusions partielles), seuils appliqués par section, vérifications globales (cohérence terminologique, je/nous, lissage F11), rapport consolidé, validation chapitre par chapitre en mode fichier.
+- **`--niveau leger|moyen|agressif`** : l'ampleur d'intervention, orthogonale au registre (le registre décide quoi, le niveau combien) — les protections, whitelists et la règle anti-fabrication ne bougent à aucun niveau.
+- **`--diff`** : sortie limitée aux segments modifiés.
+- **Glossaire métier** : `.malherbe.md` accueille un glossaire de domaine (jamais corrigé, jamais varié, jamais compté) — modèles commentés avec exemple finance/éco dans `docs/config-projet.md`.
+- **Calibration de voix renforcée** : échantillon recommandé de 3-5 pages, profil à 7 dimensions mesurées (dont taux de nominalisation et manière de citer), sections « tics protégés » / « à surveiller » dans `malherbe-voix.md`.
+- **Hedging académique** : test de départage en 3 questions dans registres.md — dans le doute, s'abstenir.
+- **Citations et références verrouillées plus explicitement** : une citation contenant des tics IA reste verbatim ; une référence ne s'« améliore » jamais, même mal formatée (signalement seulement).
+- **Fixtures** : SF-FIN (mémoire de finance slopé, lexique de domaine protégé), SNF-14 (notes humaines maladroites — la maladresse n'est pas un tic IA), SNF-15 (citation à tics verbatim + référence mal formatée signalée, jamais corrigée). Benchmark : 17 SF + 15 SNF.
+- **--learn étendu** : journal opt-in des corrections acceptées/refusées en mode fichier — un pattern souvent refusé devient candidat à l'assouplissement.
+
 ## 1.2.1 — 2026-08-11
 
 - **Aller-retour PDF documenté** : PDF en entrée → texte corrigé → régénération d'un PDF en sortie via les outils de la session (skill pdf, pandoc), avec avertissement explicite que la mise en page sera standard. La correction de la source (.md, .docx, .tex) reste le chemin recommandé — seul à préserver la mise en page. L'édition d'un PDF en place reste exclue (réalité du format, pas une limite du skill).
