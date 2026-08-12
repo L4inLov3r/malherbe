@@ -78,6 +78,8 @@ Ce mail sonne trop ChatGPT, corrige-le
 
 PDF : lu, jamais édité en place (le format ne le permet pas proprement). malherbe corrige la source (.md, .docx — mise en page préservée), ou livre la version corrigée en .md, ou la régénère en PDF neuf via les outils de la session (mise en page standard).
 
+**Guide complet** (démarrage, registres, niveaux, workflows mémoire/LinkedIn, dépannage) : [docs/guide.md](docs/guide.md).
+
 Sur un **fichier**, malherbe liste d'abord ses corrections numérotées et attend ta validation avant d'éditer.
 
 **Boucle de complétion** : quand il manque une source ou un fait (malherbe n'invente jamais), le skill pose directement ses questions (3 max, groupées, en session interactive) et intègre tes réponses — le placeholder est une question, pas une impasse.
