@@ -53,7 +53,7 @@ Réalisé le 2026-08-11, avant la première publication de malherbe. Objectif : 
 - n = 3 textes, 2 juges : probant, pas une évaluation massive. Les écarts de 1-2 points ne sont pas significatifs ; les écarts de fidélité (10 vs 2-3) le sont.
 - Les trois outils sont exécutés par le même modèle : les scores mesurent la qualité des INSTRUCTIONS de chaque skill, pas une garantie indépendante du modèle.
 - Le jugement par LLM, même en aveugle et croisé, n'est pas un jury humain. Les fabrications relevées ont toutefois été vérifiées par citation mot à mot contre les originaux.
-- malherbe a été évalué par la même infrastructure qui l'a construit ; le protocole (exécution fidèle par skill, anonymisation, juges sans accès aux skills) est conçu pour neutraliser ce biais, pas pour le faire disparaître. Reproduisez-le : tout est en annexe.
+- ce banc d'essai est une auto-évaluation du projet, pas l'audit d'un tiers ; le protocole (exécution fidèle de chaque skill, anonymisation, juges sans accès aux skills) est conçu pour neutraliser ce biais, pas pour le faire disparaître. Reproduisez-le : tout est en annexe.
 
 ## Annexe — les trois textes originaux
 
