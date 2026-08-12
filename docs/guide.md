@@ -90,8 +90,8 @@ Colle ton brouillon, c'est tout. Il garde ton format et tes vrais chiffres, tue 
 | Trop timide / trop de retouches | `--niveau agressif` / `--niveau leger` |
 | Je veux voir sans qu'il touche | `--dry-run`, ou `--diff` pour la vue compacte |
 | Je lui donne un PDF | Il le lit et corrige à côté (.md) ou régénère un PDF neuf — jamais d'édition du PDF en place |
-| Le skill ne se déclenche pas | Nouvelle session (chargement au démarrage), ou appelle-le par son nom : `/malherbe` |
-| Mise à jour du skill | `git pull` dans le repo puis recopie vers `~/.claude/skills/malherbe/` (mêmes dossiers que l'installation) |
+| Le skill ne se déclenche pas | Nouvelle session (chargement au démarrage), ou appelle-le par son nom : `/malherbe` — et si `CLAUDE_CONFIG_DIR` est défini dans ton environnement, les skills se lisent dans `$CLAUDE_CONFIG_DIR/skills/`, pas dans `~/.claude/skills/` |
+| Mise à jour du skill | `git pull` dans le repo puis recopie vers ton dossier de skills (mêmes dossiers que l'installation) |
 
 ## Aller plus loin
 
