@@ -7,7 +7,7 @@ Détecte et corrige les marques d'écriture IA — sans dénaturer un texte huma
 
 > « Enfin Malherbe vint. » — Boileau, *L'Art poétique*
 
-![Version](https://img.shields.io/badge/version-1.3.0-2d5f8a?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.4.0-2d5f8a?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-2d5f8a?style=flat-square)
 ![Patterns](https://img.shields.io/badge/patterns-84%20en%208%20familles-2d5f8a?style=flat-square)
 ![Registres](https://img.shields.io/badge/registres-4-2d5f8a?style=flat-square)
@@ -104,6 +104,8 @@ Sur un **fichier**, malherbe liste d'abord ses corrections numérotées et atten
 Un humanizer naïf détruit un mémoire : l'impersonnel, le passif méthodologique, le hedging épistémique, l'annonce de plan, le « nous » de modestie et la répétition terminologique y sont des **conventions**, pas des tics. malherbe les protège et n'attaque que le vide (emphase non démontrée), le fantôme (« des études montrent » sans référence → TODO bloquant, jamais de réécriture silencieuse) et l'étranger (calques de l'anglais).
 
 ## Qualité mesurable
+
+- **Étalonnage sur corpus réel** ([docs/etalonnage.md](docs/etalonnage.md)) : 14 textes externes aveuglés à vérité terrain — 8 IA (dont des générations naïves 2026) et 6 humains à antériorité prouvable (révisions Wikipédia 2019, blogs datés, Académie française, essai de 1922). Résultat : **14/14 verdicts corrects, zéro faux positif, verdicts stables sur 5 passes indépendantes** — avec les limites dites (n = 14, auto-évaluation).
 
 - **Benchmark apparié** : 17 cas « doit corriger » (dont un cas d'injection de prompt) + 15 pièges « ne doit PAS toucher ». Cibles : rappel ≥ 90 %, faux positifs = 0 — à tout niveau d'intervention. Protocole : `--selftest`. Dernier run mesuré (v1.0.0, 12+10 cas) : rappel 100 %, faux positifs 0.
 - **Gate final à compteurs écrits** : avant de livrer, le skill compte ses propres résidus (y compris les zéros) et liste les longueurs de phrases en chiffres — parce qu'une relecture « de tête » semble toujours propre au modèle qui vient d'écrire.

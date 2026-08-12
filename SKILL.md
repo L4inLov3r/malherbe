@@ -1,6 +1,6 @@
 ---
 name: malherbe
-version: 1.3.0
+version: 1.4.0
 license: MIT
 description: Détecte et corrige les marques d'écriture IA dans un texte FRANÇAIS (tics lexicaux, calques de l'anglais, remplissage, typographie, mise en forme LLM), en respectant le registre — académique, professionnel, LinkedIn ou casual. À utiliser quand l'utilisateur demande d'humaniser, de dé-IA-iser, d'« enlever le style ChatGPT » d'un texte français, de le relire pour en retirer les tournures IA, ou dit qu'un texte « sonne IA ». Ne réécrit jamais un texte déjà humain. NE PAS déclencher pour - traduire, résumer, corriger uniquement l'orthographe, vérifier des faits, réécrire du code, imiter une voix de marque.
 allowed-tools: Read, Write, Edit, Grep, Glob

@@ -8,6 +8,7 @@ Sources : Wikipédia EN (WP:AILEGACY, WP:AIATTR, WP:AIWEASEL, WP:FACESCHALLENGES
 
 « joue un rôle crucial/central/clé » · « appelé à jouer un rôle croissant / de plus en plus important » · « en pleine expansion » · « marque un tournant » · « moment charnière » · « étape cruciale » · « revêt une importance capitale » · « s'inscrit dans une dynamique plus large » · « reflète des tendances plus larges » · « héritage durable » · « empreinte indélébile » · « profondément ancré » · « posant les jalons de » · « ouvrant la voie à » · « au cœur des préoccupations » · « plus que jamais ». Principe génératif (Wikipédia) : la régression vers la moyenne rend le sujet « à la fois moins spécifique et plus exagéré ». (3 sources + WP:AILEGACY.)
 Correction : l'importance se démontre (chiffre, date, référence), elle ne se proclame pas.
+Non-cumul : « un enjeu majeur/capital/crucial » se compte F1 (inflation) — l'adjectif ne se recompte pas en L1b sur le même segment ; le verbe porteur (« représente », « constitue ») se compte S1 séparément.
 **Avant** : « La création de l'Institut en 1989 marque un tournant majeur qui s'inscrit dans une dynamique plus large de décentralisation. »
 **Après** : « L'Institut est créé en 1989 pour publier des statistiques régionales sans dépendre de l'institut national. »
 Sévérité : A:C P:C L:C C:S.
@@ -86,6 +87,10 @@ Sévérité : A:S P:S L:S C:I.
 Affirmations invérifiables ou absurdes, confusions d'homonymes (le lac « connu pour ses poissons panés », la villa confondue avec l'hôtel), références à pagination absurde (« p. 1-60 pour une définition »), sources dupliquées, DOI/ISBN/liens morts. (Wikipédia FR ★★★ — cas réels archivés.)
 Traitement : malherbe n'est pas un fact-checker mais DOIT signaler ce qu'il repère : « [à vérifier : cette affirmation semble douteuse] », et rappeler que le seul test décisif d'un texte suspect est la vérification des faits et des sources, pas le style.
 Sévérité : tous registres : signalement systématique.
+
+## Règle de rapport — F7, F11, F12 sont des SIGNALEMENTS
+
+F7 (absence d'ancrage), F11 (lissage structurel) et F12 (cohérence référentielle) ne se comptent JAMAIS dans la liste des patterns corrigés d'un rapport : leur sortie est un signalement (section « À toi de jouer »), parce que leur remède appartient à l'auteur. Les lister comme patterns corrigés crée de l'incohérence entre deux exécutions du skill.
 
 ## Règle de la famille
 

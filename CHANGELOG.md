@@ -1,5 +1,13 @@
 # Changelog — malherbe
 
+## 1.4.0 — 2026-08-12
+
+Version d'étalonnage : le skill a été mesuré en aveugle sur un corpus externe à vérité terrain (8 textes IA jamais vus — dont 3 générations naïves de 2026 — et 6 textes humains à antériorité PROUVABLE : révisions Wikipédia 2019 via oldid, blogs datés 2015-2019, Académie française 2020, essai de 1922). Résultats : **14/14 verdicts corrects, zéro faux positif, verdicts 100 % stables sur 5 passes indépendantes**. Méthodologie, chiffres et limites : docs/etalonnage.md.
+
+- **S13 renforcé d'un critère quantitatif calibré** : étalement des longueurs de phrases < 15 mots sur 150+ mots = signal moyen (humains du corpus : 35-80 ; IA : 4-33). C'est le discriminant qui survit à l'assainissement lexical des modèles récents — le slop académique 2026 du corpus ne contenait plus AUCUN marqueur lexical et a été détecté par la structure seule.
+- **Constance améliorée** (patterns « clignotants » diagnostiqués sur 5 passes) : F7/F11/F12 explicitement définis comme signalements (jamais comptés en patterns) ; non-cumul « enjeu majeur/capital » = F1 ; « explore en profondeur » ajouté au Tier 1 ; « exceptionnel/époustouflant/remarquable » ajoutés à L6.
+- Couverture externe documentée : 27 patterns exercés à bon escient par le corpus ; aucune suppression (un corpus de 14 textes départage, il ne condamne pas).
+
 ## 1.3.0 — 2026-08-12
 
 - **`--chapitre` (et détection automatique des longs documents)** : traitement section par section avec structure gelée (titres, annonces de plan, transitions, conclusions partielles), seuils appliqués par section, vérifications globales (cohérence terminologique, je/nous, lissage F11), rapport consolidé, validation chapitre par chapitre en mode fichier.

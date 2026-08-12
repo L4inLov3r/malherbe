@@ -104,6 +104,7 @@ Sévérité : A:I (épistémique) / C (flou sans objet) P:C L:C C:S.
 ## S13 — Uniformité de longueur (burstiness faible)
 
 3+ phrases consécutives de longueur quasi identique (± 3 mots) ; texte entier dans la bande 18-22 mots ; paragraphes tous calibrés. (3 sources + mesures.)
+Critère quantitatif calibré sur corpus (étalonnage 2026-08, docs/etalonnage.md) : sur un texte de 150+ mots, un étalement des longueurs de phrases (max − min) INFÉRIEUR à 15 mots est un signal moyen — les textes humains du corpus s'étalent de 35 à 80, les textes IA de 4 à 33 à longueur comparable. C'est le marqueur qui survit quand le lexique IA d'une nouvelle génération de modèles s'est assaini.
 Correction : casser par une phrase courte (≤ 8 mots) ou fusionner ; viser un étalement max−min ≥ 15 mots par page. NE PAS fabriquer de contenu pour allonger : on redistribue l'existant.
 Sévérité : A:S P:C L:C C:S.
 
